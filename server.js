@@ -18,7 +18,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gad85"; 
 
+mongoose.connect(MONGODB_URI)
 
 app.use(apiRoutes);
 app.use(htmlRoutes);
